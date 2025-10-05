@@ -1,0 +1,10 @@
+version: "3.9"  # compose file version
+services:
+  api:
+    build: ./api  # build API from Dockerfile
+    ports:
+      - "5000:5000"  # expose API
+    environment:
+      - REDIS_HOST=redis  # connect to redis
+  redis:
+    image: redis:7-alpine  # lightweight redis image
